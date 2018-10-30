@@ -1,7 +1,8 @@
-import React,{Component} from 'react';
+import React,{ Component } from 'react';
 import ReactDOM from 'react-dom';
 require('normalize.css/normalize.css');
 require('styles/App.css');
+
 //获取图片相关的数据
 let imageDatas = require('json!../data/imageDatas.json');
 
@@ -83,7 +84,7 @@ class ImgFigure extends React.Component{
   }
 }
 //控制主键
-class ControllerUnit extends React.Component{
+class ControllerUnit extends Component{
   constructor(props){
     super(props);
     this.handleClick=this.handleClick.bind(this);
@@ -137,7 +138,7 @@ class AppComponent extends React.Component {
     };
     this.state={
       imgsArrangeArr:[
-     /*  {
+      {
         pos:{
           left:'0',
           top:'0'
@@ -145,7 +146,7 @@ class AppComponent extends React.Component {
         rotate:0,//旋转角度
         isInverse:false,//图片正反面
         isCenter:false,//图片是否居中
-      } */
+      }
     ]
   };
   }
@@ -229,6 +230,7 @@ class AppComponent extends React.Component {
       imgsArrangeArr:imgsArrangeArr
     });
   }
+  
   /* 
   利用 rearrange函数，剧中对应index图片
   @param index，需要被居中的图片对应图片信息数组的index值
